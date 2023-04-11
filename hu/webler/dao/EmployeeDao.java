@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,12 +103,12 @@ public class EmployeeDao implements IEmployee {
 			pstmt.setString(4, employee.getIdentityCard());
 			pstmt.setInt(5, employee.getSalary());
 			pstmt.setInt(6, employee.getEmployeeCategoryId());
-			pstmt.setInt(7, employee.isStatus() ? 1 :0);
+			pstmt.setInt(7, employee.isStatus() ? 1 : 0);
 			pstmt.setInt(8, employee.getId());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 

@@ -21,7 +21,8 @@ public class App {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				new App();
-				}
+				
+			}
 		});
 	}
 
@@ -29,6 +30,4 @@ public class App {
 	// 1. EmployeeCategory CRUD
 	// 2. Filter -> vezetéknév, keresztnév, beosztás alapján, 
 	//fizetés alapján (tól ig - intervallum)
-	
-	
 }

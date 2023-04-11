@@ -34,8 +34,7 @@ public class EmployeePresenter implements IViewListener{
 	@Override
 	public void onButtonClickedSaveEmployee() {
 		employeeDao.save(view.getEmpDataFromFrame());
-		view.tableEmployeeDeleteRows();
-		this.fillTableEmployee();
+		refreshTable();
 	}
 
 	@Override
@@ -54,21 +53,25 @@ public class EmployeePresenter implements IViewListener{
 	@Override
 	public void onButtonClickedDeleteEmployee() {
 		employeeDao.delete(view.getEmpDataFromFrameToUpdate());
-		view.tableEmployeeDeleteRows();
-		this.fillTableEmployee();
+		refreshTable();
 		view.disposeEmpUpdateOrDeleteFrame();
 	}
 
 	@Override
 	public void onButtonClickedUpdateEmployee() {
 		employeeDao.update(view.getEmpDataFromFrameToUpdate());
-		view.tableEmployeeDeleteRows();
-		this.fillTableEmployee();
+		refreshTable();
 		view.disposeEmpUpdateOrDeleteFrame();
 	}
 
 	@Override
 	public void onMouseClickedExit() {
 		System.exit(0);
+	}
+	
+	public void refreshTable() {
+		view.tableEmployeeDeleteRows();
+		this.fillTableEmployee();
+		
 	}
 }
